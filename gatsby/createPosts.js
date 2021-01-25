@@ -25,9 +25,11 @@ module.exports = async ({ actions, graphql }) => {
       }
     }
   `;
-  // Create a function for getting pages
+  // Create a function for getting posts
   const { createPage } = actions;
   const allPosts = [];
+  const portfolioPages = [];
+  let pageNumber = 0;
   const fetchPages = async variables =>
     await graphql(GET_POSTS, variables).then(({ data }) => {
       const {
@@ -38,18 +40,41 @@ module.exports = async ({ actions, graphql }) => {
           },
         },
       } = data;
+
+      const nodeIds = nodes.map(node => node.postId);
+      const postsTemplate = path.resolve(`./src/templates/posts.js`);
+      const postsPath = !variables.after ? `/portfolio/` : `/portfolio/page/${pageNumber}`;
+
+      portfolioPages[pageNumber] = {
+        path: postsPath,
+        component: postsTemplate,
+        context: {
+          id: nodeIds,
+          pageNumber: pageNumber,
+          hasNextPage: hasNextPage
+        },
+        ids: nodeIds
+      }
+
       nodes.map(post => {
         allPosts.push(post)
       });
       if (hasNextPage) {
-        return fetchPages({ first: variables.first, after: endCursor })
+        pageNumber++;
+        return fetchPages({ first: 12, after: endCursor });
       }
       return allPosts;
     })
 
   // Map over all the pages and call createPage
-  await fetchPages({ first: 100, after: null }).then(allPosts => {
+  await fetchPages({ first: 12, after: null }).then(allPosts => {
     const postTemplate = path.resolve(`./src/templates/post.js`);
+
+    portfolioPages.map(page => {
+      console.log(`create post archive: ${page.path}`);
+      createPage(page);
+    })
+
     allPosts.map(post => {
       console.log(`create post: ${post.uri}`)
       createPage({

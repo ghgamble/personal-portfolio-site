@@ -1,6 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import Layout from '../components/layout';
+import ArchivePosts from '../components/archivePosts';
+import SEO from '../components/seo';
+
 const UserTemplate = props => {
   const {
       data: {
@@ -8,11 +12,14 @@ const UserTemplate = props => {
       },
   } = props;
 
-  const { name } = user;
+  const { name, posts, description } = user;
   return (
-    <div>
+    <Layout>
+    <SEO title={`Author: ${name}`} />
       <h1>User: {name}</h1>
-    </div>
+      <p>{description}</p>
+      <ArchivePosts posts={posts} />
+    </Layout>
   );
 }
 
@@ -23,6 +30,13 @@ export const pageQuery = graphql`
       user(id: $id) {
         id
         name
+        posts {
+          nodes {
+            title(format: RENDERED)
+            slug
+            postId
+          }
+        }
       }
     }
   }

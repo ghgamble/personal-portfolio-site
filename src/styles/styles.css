@@ -1,0 +1,64 @@
+.main-menu > ul {
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+}
+
+.main-menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-menu a {
+  display: block;
+  padding: .5rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.main-menu a:hover, .main-menu a[aria-current="page"] {
+  /* background: #fff; */
+  color: #000;
+}
+
+
+
+
+.meta {
+  border-bottom: 1px #ccc solid;
+  padding: 0 0 1rem 0;
+  margin: 0 0 1rem 0;
+  font-size: .8rem;
+}
+ul.meta {
+  display: flex;
+  list-style: none;
+}
+.meta ul, .meta ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline;
+}
+
+.meta ul {
+  padding-left: 5px;
+}
+
+.meta ul li + li:before {
+  content: ", ";
+}
+.meta ul li:first-of-type:before {
+  content: "" !important;
+}
+
+.comment {
+  margin: 2rem 0;
+  padding: 1rem 2rem 0 2rem;
+  border: 1px solid #ccc;
+}
+.comment .meta {
+  border-bottom: none;
+  font-size: .6rem;
+}

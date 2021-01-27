@@ -1,7 +1,9 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import Pagination from '../components/pagination';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const Posts = props => {
   const {
@@ -13,13 +15,14 @@ const Posts = props => {
   const currentPage = pageNumber ? `- Page ${pageNumber}` : ``;
 
   return (
-    <div>
+    <Layout>
+      <SEO title="Portfolio Archive" />
       <h1>Portfolio Projects {currentPage}</h1>
       {posts.nodes.map(post => (
-        <h2 key={post.id}>{post.title}</h2>
+        <h2 key={post.id}><Link to={post.uri}>{post.title}</Link></h2>
       ))}
       <Pagination pageNumber={pageNumber} hasNextPage={hasNextPage} />
-    </div>
+    </Layout>
   );
 }
 
@@ -31,7 +34,8 @@ export const pageQuery = graphql`
       posts(where: { in: $ids }) {
         nodes {
           id
-          title
+          uri
+          title(format: RENDERED)
         }
       }
     }

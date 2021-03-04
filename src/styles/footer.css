@@ -1,0 +1,10 @@
+.footer-content {
+  background-color: black;
+}
+.footer-content .copyright {
+  color: #fff;
+  margin: 0 auto;
+  padding: 0 0 20px 0;
+  text-align: center;
+  text-transform: uppercase;
+}

@@ -1,0 +1,13 @@
+.social-icon-container {
+  max-width: 100px;
+  color: #fff;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+.social-icon-container a {
+  color: rgb(0, 206, 209);
+}

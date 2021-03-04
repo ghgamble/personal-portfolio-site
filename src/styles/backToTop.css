@@ -1,0 +1,14 @@
+.back-to-top {
+  color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    /* border: 2px solid rgb(0, 206, 209); */
+    background: rgb(0, 206, 209);
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: -1rem;
+}
+.back-to-top .arrow {
+  padding: 7px;
+}

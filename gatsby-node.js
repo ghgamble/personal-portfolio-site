@@ -6,6 +6,7 @@
 
 // You can delete this file if you're not using it
 const createPages = require(`./gatsby/createPages`);
+const createContactPage = require(`./gatsby/createContactPage`);
 const createPosts = require(`./gatsby/createPosts`);
 const createCategories = require(`./gatsby/createCategories`);
 const createTags = require(`./gatsby/createTags`);
@@ -13,8 +14,17 @@ const createUsers = require(`./gatsby/createUsers`);
 
 exports.createPages = async ({ actions, graphql }) => {
   await createPages({ actions, graphql });
+  await createContactPage({ actions, graphql });
   await createPosts({ actions, graphql });
   await createCategories({ actions, graphql });
   await createTags({ actions, graphql });
   await createUsers({ actions, graphql });
+}
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    node: {
+      fs: "empty",
+    },
+  })
 }

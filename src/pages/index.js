@@ -42,7 +42,6 @@ const IndexPage = () => {
           <SEO title={props.wpgraphql.pageBy.title} />
           <HomeAbout />
           <PortfolioItems />
-          <div id="hubspotForm"></div>
         </Layout>
       )}
     />

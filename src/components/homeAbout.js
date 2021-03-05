@@ -25,14 +25,10 @@ const HomeAbout = () => {
       `}
       render={props => (
         <div id="aboutSectionHome">
-          <div class="container">
-            <div class="image-stack">
-              <div class="image-stack__item image-stack__item--top">
-                <div className="content" dangerouslySetInnerHTML={{ __html: props.wpgraphql.pageBy.content }} />
-              </div>
-              <div class="image-stack__item image-stack__item--bottom">
-                <img src={props.wpgraphql.pageBy.featuredImage.node.mediaItemUrl} alt="" />
-              </div>
+          <div id="main-about-div">
+            <div className="content" dangerouslySetInnerHTML={{ __html: props.wpgraphql.pageBy.content }} />
+            <div className="image-content">
+              <img src={props.wpgraphql.pageBy.featuredImage.node.mediaItemUrl} alt="" />
             </div>
           </div>
         </div>

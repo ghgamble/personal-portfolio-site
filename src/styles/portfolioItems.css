@@ -1,7 +1,7 @@
 .home-page-portfolio-container {
   display: flex;
   justify-content: space-around;
-  background: #000;
+  background: rgb(0, 206, 209);
   padding: 7em 2em;
 }
 .single-portfolio-item img {

@@ -6,12 +6,13 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-graphql`,
       options: {
         typeName: `WPgraphql`,
         fieldName: `wpgraphql`,
-        url: `http://www.grace-gamble.xyz/graphql`,
+        url: `http://testgatsbywp.local/graphql`,
       },
     },
     {

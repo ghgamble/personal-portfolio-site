@@ -28,7 +28,7 @@ const IndexPage = () => {
     <StaticQuery
       query={graphql`
         {
-          wpgraphql {
+          wpgraphql{
             pageBy(pageId: 323) {
               title(format: RENDERED)
               uri

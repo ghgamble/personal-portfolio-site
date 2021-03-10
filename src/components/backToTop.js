@@ -16,7 +16,6 @@ const BackToTop = () => {
 
   const topFunction = e => {
     e.preventDefault();
-    const btn = document.getElementById("back-to-top");
     scrollToTop();
   }
 

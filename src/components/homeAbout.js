@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 
 import '../styles/homeAbout.css';

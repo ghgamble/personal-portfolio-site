@@ -34,7 +34,7 @@ const PortfolioItems = () => {
         <div className="home-page-portfolio-container" id="portfolioSectionHome">
           {props.wpgraphql.posts.nodes.map(post => (
             <div className="single-portfolio-item">
-              <Link to={post.postProjectUrl.projectLink} target="_blank"><img src={post.featuredImage.node.mediaItemUrl} /></Link>
+              <Link to={post.postProjectUrl.projectLink} target="_blank"><img src={post.featuredImage.node.mediaItemUrl} alt={post.featuredImage.node.mediaItemUrl} /></Link>
             </div>
           ))}
         </div>

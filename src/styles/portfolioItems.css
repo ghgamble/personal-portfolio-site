@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-around;
   background: rgb(0, 206, 209);
-  padding: 7em 2em;
+  padding: 4em 1em;
+  text-align: center;
 }
 .single-portfolio-item img {
   max-width: 30vw;
@@ -17,5 +18,10 @@
   }
   .single-portfolio-item img {
     max-width: 90vw;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .home-page-portfolio-container {
+    padding: 1em;
   }
 }

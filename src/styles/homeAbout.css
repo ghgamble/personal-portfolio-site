@@ -15,7 +15,7 @@ div#main-about-div {
     background: rgb(245, 248, 250);
     width: 70%;
     margin: 0 auto;
-    margin-top: 7em;
+    margin-top: 4em;
 }
 div#main-about-div .content {
   text-align: center;
@@ -23,7 +23,7 @@ div#main-about-div .content {
 }
 div#main-about-div .image-content {
   text-align: center;
-    margin-bottom: 7em;
+    margin-bottom: 4em;
     padding-bottom: 6em;
 }
 div#main-about-div .image-content img {
@@ -44,6 +44,9 @@ div#main-about-div a {
   }
 }
 @media only screen and (max-width: 600px) {
+  div#main-about-div {
+      margin-top: 1em;
+  }
   div#main-about-div .content {
     padding: 2em 1em;
   }
@@ -52,8 +55,12 @@ div#main-about-div a {
   }
   div#main-about-div .image-content {
     padding-bottom: 3em;
+    margin-bottom: 1em;
   }
   div#main-about-div {
     width: 90%;
+  }
+  #aboutSectionHome p {
+    font-size: 16px;
   }
 }
